@@ -1,0 +1,165 @@
+<template>
+    <div class="outer">
+
+        <div class="main">
+            <div class="out">
+                <div class="left">
+                    <a href="">
+                        <img src="../../static/images/1.jpg" alt="">
+                    </a>
+                    <a href="">
+                        <img src="../../static/images/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="right">
+                    <a href="">
+                        <img src="../../static/images/3.jpg" alt="">
+                    </a>
+                    <a href="">
+                        <img src="../../static/images/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="pre">
+                    <a href="">
+                        <img src="../../static/images/5.jpg" alt="">
+                    </a>
+                    <a href="">
+                        <img src="../../static/images/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="back">
+                    <a href="">
+                        <img src="../../static/images/7.jpg" alt="">
+                    </a>
+                    <a href="">
+                        <img src="../../static/images/8.jpg" alt="">
+                    </a>
+                </div>
+              </div>
+              <div class="tips">
+                  <span class="tip"></span>
+                  <span class="tip"></span>
+                  <span class="tip"></span>
+                  <span class="tip"></span>
+              </div>
+        </div>
+        <div class="prev"></div>
+        <div class="next"></div>
+    </div>
+</template>
+
+<script>
+export default {
+  name: 'Index',
+  data() {
+    return {
+     test:'sdfsdfsdfsdf',
+    };
+  },
+  methods: {
+
+  }
+};
+</script>
+
+<style>
+    .tips{
+      width:200px;
+      height:10px;
+      white-space: nowrap;
+      position:absolute;
+      background-color: white;
+      left: 50%;
+      top: 240px;
+      margin-left: -100px;
+      line-height: 10px;
+    }
+    .tips .tip{
+        display:inline-block;
+        width:40px;
+        height:8px;
+        background-color: rgba(255,200,0,0.6);
+    }
+      .outer{
+      min-width:1270px;
+          padding: 0 100px;
+          height: 250px;
+      }
+      .outer>div{
+          float: left;
+          height: 250px;
+      }
+      .prev{
+          margin-left: -100%;
+          background-color:#333;
+          width: 100px;
+          position: relative;
+          left: -100px;
+      }
+      .next{
+      position: relative;
+          float: right;
+          margin-right: -100%;
+          background: #eee;
+          width: 100px;
+      }
+      .main{
+          width:100%;
+          overflow: hidden;
+          position:relative;
+      }
+    .out {
+    width: 1260px;
+    height: 250px;
+    position:relative;
+    -webkit-transform-style: preserve-3d;
+    margin:0px auto;
+    -webkit-animation:rotate 18s linear infinite;
+    /*transform: rotateX(20deg) rotateY(120deg);*/
+    transform-origin: 50% 50% -630px;
+    }
+    .out>div{
+      width: 100%;
+      height: 100%;
+      position:absolute;
+      font-size: 60px;
+      text-align:center;
+      line-height:250px;
+      color:#daa520;
+     white-space: nowrap;
+    }
+    .out>div a{
+        display: inline-block;
+        width: 625px;
+        height: 100%;
+    }
+    .out>div img{
+        width: 100%;
+        height: 100%;
+    }
+     .left{
+        background-color: rgba(255,255,0,0.3);
+        transform-origin:left;
+         transform: rotateY(90deg);
+    }
+     .right{
+        background-color: rgba(0,0,255,0.3);
+        transform-origin: right;
+        transform: rotateY(-90deg);
+    }
+     .pre{
+        background-color: rgba(0,255,255,0.3);
+        transform: translateZ(-1260px);
+    }
+     .back{
+        background-color: rgba(99,66,33,0.3);
+    }
+      @-webkit-Keyframes rotate{
+  0%{
+        -webkit-transform:rotateX(0deg) rotateY(0deg);
+  }
+  100%{
+        -webkit-transform:rotateX(0deg) rotateY(360deg) ;
+  }
+  }
+</style>
