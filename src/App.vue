@@ -15,8 +15,7 @@
         <div class="top_nav_after">
           <div class="search_input">
           <el-input
-          placeholder="请输入内容"
-          v-model="input23">
+          placeholder="请输入内容">
           <i slot="suffix" class="el-input__icon el-icon-search"></i>
           </el-input>
           </div>
@@ -25,10 +24,18 @@
           <el-button>开通付费包</el-button>  
         </div>
       </div>
+      <div class="top_router">
+        <ul>
+          <li class="router_ul"><a href="">首页</a></li>
+          <li class="router_ul"><a href="">歌手</a></li>
+          <li class="router_ul"><a href="">专辑</a></li>
+          <li class="router_ul"><a href="">排行</a></li>
+          <li class="router_ul"><a href="">MV</a></li>
+        </ul>
+      </div>
     </div>
   </el-header>
   <el-main>
-    <el-button type="success">文本的按钮</el-button>
     <router-view/>
   </el-main>
   <el-footer height="250px">Footer</el-footer>
@@ -46,7 +53,11 @@ export default {
 <style lang="scss">
 @import 'css/base';
 .mod_head{
-  width: 100%;
+  min-width: 1050px;;
+  padding:0 50px;
+  .top_nav{
+    height:90px;
+
   ul{
      list-style: none;
      display: inline;
@@ -65,8 +76,29 @@ export default {
       display: inline-block;
     }
     display: inline-block;
-    width: 600px;
+    min-width: 500px;
   }
+  }
+  .top_router{
+    height: 50px;
+    line-height: 50px;
+    border-top: 1px solid #f2f2f2;
+    ul{
+      list-style: none;
+      li{
+        display:inline-block;
+        margin:0 40px;
+        a{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:1150px){
+    .mod_head .top_nav_after .search_input{
+      width: 40px;
+    }
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
